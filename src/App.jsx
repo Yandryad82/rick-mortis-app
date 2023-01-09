@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import ResidentCard from "./components/ResidentCard";
 import "./styles.css";
+import rectangle from '../src/images/Rectangle 1.png'
 
 function App() {
   const [universeType, setUniverseType] = useState({});
@@ -20,14 +21,14 @@ function App() {
     axios
       .get(`https://rickandmortyapi.com/api/location/${searchId}`)
       .then((res) => setUniverseType(res.data));
+      setSearchId('')
   };
 
   return (
     <div className="App">
-      <nav className="container-nav">
-        <span>NAV</span>
-        <img src="https://www.figma.com/file/bBzgbI7Q1s3AfixhJwEY6d/Diagram---React?node-id=51%3A61&t=Y4pjYpiawcO8u5me-4" alt="" />
-      </nav>
+      <header className="container-nav">
+        <img src={rectangle} alt="" />
+      </header>
       <input
         type="text"
         placeholder="type a resident type id"
