@@ -134,6 +134,11 @@
   .emoji {
     font-size: 50px;
   }
+
+  .no-residents img{
+    width: 400px;
+    
+  }
   
   /* @media (min-width: 500px) {
     .col{

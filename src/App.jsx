@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import ResidentCard from "./components/ResidentCard";
 import "./styles.css";
 import rectangle from '../src/images/Rectangle 1.png'
-
+import Morty from '../src/images/Morty.jpg'
 function App() {
   const [universeType, setUniverseType] = useState({});
   const [searchId, setSearchId] = useState("");
@@ -59,7 +59,9 @@ function App() {
           <p>{universeType.residents?.length}</p>
         </div>
       </div>
-      {cond ? <div className="no-residents"><h1>We find no residents in this universe</h1></div> : <ul className="residen-list">
+      {cond ? <div className="no-residents"><h1>We find no residents in this universe</h1>
+      <img src={Morty} alt="" />
+      </div> : <ul className="residen-list">
         {universeType.residents?.map((resident) => (
           <ResidentCard url={resident} key={resident} />
         ))}
