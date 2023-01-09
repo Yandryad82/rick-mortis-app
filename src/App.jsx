@@ -31,7 +31,7 @@ function App() {
   
   return (
     <div className="App">
-      <header className="container-nav">
+      <header className="container-header">
         <img src={rectangle} alt="" />
       </header>
       <input

@@ -14,11 +14,16 @@
     background-color: #E5E5E5;
   }
 
-  .container-nav {
-    width: 100%;
-    border: 1px solid white;
+  .container-header {
+    max-width: 100%;
     margin-bottom: 1rem;
   }
+
+  .container-header img {
+    width: 100%;
+   
+  }
+  
   /* .pokemon-list{
     display: flex;
     flex-wrap: wrap;
@@ -31,11 +36,12 @@
   } */
 
   input {
-    border-radius: 10px;
-    width: 50%;
+    border-radius: 20px;
+    width: 40%;
     height: 30px;
     background-color: #062226;
     color: #FBFBFB;
+    margin-right: .5rem;
   }
 
   .container-box-general-info {
