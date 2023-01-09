@@ -19,10 +19,16 @@ function App() {
   console.log(universeType);
 
   const searchType = () => {
-    axios
+    
+      
+      if (searchId == ""){
+
+      }else{
+        axios
       .get(`https://rickandmortyapi.com/api/location/${searchId}`)
       .then((res) => setUniverseType(res.data));
       setSearchId('')
+      }
   };
   
   let cond = universeType.residents?.length==0  ? true : false
