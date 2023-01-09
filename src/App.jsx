@@ -7,7 +7,8 @@ import rectangle from '../src/images/Rectangle 1.png'
 function App() {
   const [universeType, setUniverseType] = useState({});
   const [searchId, setSearchId] = useState("");
-
+  
+  
   useEffect(() => {
     const randomId = Math.floor(Math.random() * 126) + 1;
     axios
@@ -23,7 +24,11 @@ function App() {
       .then((res) => setUniverseType(res.data));
       setSearchId('')
   };
-
+  
+  let cond = universeType.residents?.length==0  ? true : false
+  
+  const [population, setPopulation] = useState(cond)  
+  
   return (
     <div className="App">
       <header className="container-nav">
@@ -54,11 +59,11 @@ function App() {
           <p>{universeType.residents?.length}</p>
         </div>
       </div>
-      <ul className="residen-list">
+      {cond ? <div className="no-residents"><h1>We find no residents in this universe</h1></div> : <ul className="residen-list">
         {universeType.residents?.map((resident) => (
           <ResidentCard url={resident} key={resident} />
         ))}
-      </ul>
+      </ul>}
     </div>
   );
 }
