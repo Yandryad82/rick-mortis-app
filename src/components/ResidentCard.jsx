@@ -11,11 +11,10 @@ const ResidentCard = ({ url }) => {
   console.log(resident);
 
   return (
-    <li className="col">
+    
       <div className="resident-card">
-        <div className="card-image">
-          <img src={resident.image} alt="" />
-        </div>
+        <img className="card-image" src={resident.image} alt="" />
+        
         <div className="resident-card-info">
          <h3>{resident.name}</h3>
          <div className="container-line">
@@ -27,7 +26,7 @@ const ResidentCard = ({ url }) => {
          <p><span>Appearance in Episodes:</span> {resident.episode?.length}</p>
         </div>
       </div>
-    </li>
+   
   );
 };
 
