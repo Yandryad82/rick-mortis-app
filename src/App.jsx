@@ -5,8 +5,9 @@ import "./styles.css";
 import rectangle from '../src/images/imagendefondo.jpg'
 import Morty from '../src/images/Morty.jpg'
 function App() {
-  const [universeType, setUniverseType] = useState({});
-  const [searchId, setSearchId] = useState("");
+
+const [universeType, setUniverseType] = useState({});
+const [searchId, setSearchId] = useState("");
 
 
   useEffect(() => {
@@ -50,35 +51,35 @@ function App() {
         <button onClick={searchType}>Search</button>
       </div>
       <div className="container-box-general-info">
-<div className="contenedor-filter-name">
+        <div className="contenedor-filter-name">
 
-<p className='item-name'> 
-          {universeType.name}</p>
-</div>
-          <div className="filter-barra">
-          <p className='itenfilter'> <span>Type</span> <br />
+          <p className='item-name'>
+            {universeType.name}</p>
+        </div>
+        <div className="filter-barra">
+          <p className='itenfilter'> <span>Type:</span> <br />
             {universeType.type}</p>
 
-          <p className='itenfilter'> <span>Dimension</span> <br />
+          <p className='itenfilter'> <span>Dimension:</span> <br />
             {universeType.dimension}</p>
 
-          <p className='itenfilter'> <span>Resident</span> <br />
+          <p className='itenfilter'> <span>Resident:</span> <br />
             {universeType.residents?.length}</p>
 
         </div>
 
       </div>
       <ul className="residen-list">
-      {cond ? <div className="resident-card"><h3>We find no residents in this universe</h3>
-        <img className="imgdefault" src={Morty} alt="" />
-      </div> :  
-      <> 
-        {universeType.residents?.map((resident) => (
-          <ResidentCard url={resident} key={resident} />
-        ))} 
-        </>
-      }  
-            </ul>
+        {cond ? <div className="resident-card"><h3>We find no residents in this universe</h3>
+          <img className="imgdefault" src={Morty} alt="" />
+        </div> :
+          <>
+            {universeType.residents?.map((resident) => (
+              <ResidentCard url={resident} key={resident} />
+            ))}
+          </>
+        }
+      </ul>
     </div>
   );
 }

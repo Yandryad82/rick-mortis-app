@@ -121,12 +121,13 @@ height: 50vmax;
   h3{
     text-align: center;
   }
-  
+
   .card-image{
     width: 90%;
     margin: auto;
     border-radius: 10px;
   }
+  
   .resident-card-info{
     display: flex;
     flex-direction: column;
